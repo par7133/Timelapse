@@ -387,7 +387,7 @@
            <span aria-hidden="true" style="color:black; font-weight:900;">&times;</span>
        </button>
        <br>  
-      <span onclick="showHowTo();"><?PHP echo(getResource0("How-to: Manage your avatars in Avatar Free", $lang));?></span>
+      <span onclick="showHowTo();"><?PHP echo(getResource0("How-to: Manage your avatars in Timelapse", $lang));?></span>
       <br><br>
    </div>     
 
