@@ -1,10 +1,10 @@
 <p align="center">
     <a href="https://t.imelap.se">
-        <img src="/Public/res/AFlogo2.png" width="188" title="Timelapse" alt="Avatar Free">
+        <img src="/Public/res/AFlogo2.png" width="188" title="Timelapse" alt="Timelapse">
     </a>
 </p>
 
-# Avatar Free
+# Timelapse
 
 Hello and welcome to Timelapse!<br>
 	  
