@@ -364,7 +364,7 @@
 
   <link rel="shortcut icon" href="/favicon.ico" />
 
-  <meta name="description" content="Welcome to Timelapse! Let everyone have its photo presence."/>
+  <meta name="description" content="Welcome to Timelapse! Let everyone have its social presence."/>
   <meta name="keywords" content="Timelapse,social,presence,t.imelap.se,on,premise,solution"/>
   <meta name="robots" content="index,follow"/>
   <meta name="author" content="5 Mode"/>
@@ -449,7 +449,7 @@
       <br><br>
    </div> 
    <div class="header" style="margin-top:18px;margin-bottom:18px;">
-        <a href="http://t.imelap.se" target="_self" style="color:#000000; text-decoration: none;">&nbsp;<img src="Public/res/AFlogo.png" align="middle" style="position:relative;top:-5px;width:22px;">&nbsp;Avatar Free</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/par7133/Timelapse" style="color:#000000;"><span style="color:#119fe2">on</span> github</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="mailto:my25mb@aol.com" style="color:#000000;"><span style="color:#119fe2">for</span> feedback</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="tel:+39-331-4029415" style="font-size:13px;background-color:#15c60b;border:2px solid #15c60b;color:#000000;height:27px;text-decoration:none;">&nbsp;&nbsp;get support&nbsp;&nbsp;</a>
+        <a href="http://t.imelap.se" target="_self" style="color:#000000; text-decoration: none;">&nbsp;<img src="Public/res/AFlogo.png" align="middle" style="position:relative;top:-5px;width:22px;">&nbsp;Timelapse</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/par7133/Timelapse" style="color:#000000;"><span style="color:#119fe2">on</span> github</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="mailto:my25mb@aol.com" style="color:#000000;"><span style="color:#119fe2">for</span> feedback</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="tel:+39-331-4029415" style="font-size:13px;background-color:#15c60b;border:2px solid #15c60b;color:#000000;height:27px;text-decoration:none;">&nbsp;&nbsp;get support&nbsp;&nbsp;</a>
    </div>
     
    <form id="frmUpload" role="form" method="post" action="/<?PHP echo(AVATAR_NAME);?>?hl=<?PHP echo($lang);?>" target="_self" enctype="multipart/form-data">  
@@ -755,8 +755,12 @@
 <?PHP if ($CURRENT_VIEW == PUBLIC_VIEW): ?>  
 
 <!-- SKINNER CODE -->
-<?php if (file_exists(APP_PATH . DIRECTORY_SEPARATOR . "skinner.html")): ?>
-<?php include(APP_PATH . DIRECTORY_SEPARATOR . "skinner.html"); ?> 
+<?php if (is_readable($AVATAR_PATH . DIRECTORY_SEPARATOR . "skinner.html")): ?>
+<?php include($AVATAR_PATH . DIRECTORY_SEPARATOR . "skinner.html"); ?> 
+<?php else: ?>
+      <?php if (file_exists(APP_PATH . DIRECTORY_SEPARATOR . "skinner.html")): ?>
+      <?php include(APP_PATH . DIRECTORY_SEPARATOR . "skinner.html"); ?> 
+      <?php endif; ?>
 <?php endif; ?>
 
 <!-- METRICS CODE -->
