@@ -52,6 +52,8 @@
  }
  $shortLang = getShortLang($lang);
  
+ $blogSP = (int)substr(strip_tags(filter_input(INPUT_GET, "blogSP")??""), 0, 5);
+ 
  $password = filter_input(INPUT_POST, "Password")??"";
  $password = strip_tags($password);
  if ($password !== PHP_STR) {	
@@ -518,16 +520,23 @@
                 <?PHP
       $CUDOZ++;          
       $iEntry = 1;          
+      $iCurEntry = 1; 
       arsort($aFilePaths, SORT_STRING);
+      //echo("blogSP=".$blogSP);
       foreach ($aFilePaths as $filePath) {
+        //echo("iCurEntry=".$iCurEntry);
+        if ($iCurEntry<($blogSP+1)) {
+          $iCurEntry++;
+          continue;
+        }  
+        if ($iEntry>APP_BLOG_MAX_POSTS) {
+          break;
+        }
         $orifilename = basename($filePath);
         $orifileExt = strtolower(pathinfo($orifilename, PATHINFO_EXTENSION));
         $date = explode("-",$orifilename)[0];
         $time = explode("-",$orifilename)[1];
         $time = left($time,2) . ":" . substr($time,2,2);
-        if ($iEntry>APP_BLOG_MAX_POSTS) {
-          break;
-        }
         if ($iEntry === count($aFilePaths) || $iEntry==APP_BLOG_MAX_POSTS) {
           $marginbottom = "0px";
         } else {
@@ -546,8 +555,44 @@
                       <?PHP EndIf; ?>
                  <?PHP 
        $iEntry++;          
+       $iCurEntry++;
       }?>
-        <?PHP endif; ?>
+      <?PHP endif; ?>
+
+   <?PHP
+    $totPages = (int)(count($aFilePaths)/APP_BLOG_MAX_POSTS); 
+    if ($totPages < (count($aFilePaths)/APP_BLOG_MAX_POSTS)) {
+      $totPages++;
+    }
+    $firstPost = 0;
+    $prevPost = $blogSP - APP_BLOG_MAX_POSTS;
+    if ($prevPost < 0) {
+      $prevPost = 0;
+    }    
+    $nextPost = $blogSP + APP_BLOG_MAX_POSTS;
+    if ($nextPost > (($totPages - 1) * APP_BLOG_MAX_POSTS)) {
+      $nextPost = (($totPages - 1) * APP_BLOG_MAX_POSTS);
+    }
+    if ($nextPost < 0) {
+      $nextPost = 0;
+    }       
+    $lastPost = (($totPages - 1) * APP_BLOG_MAX_POSTS);
+    if ($lastPost < 0) {
+      $lastPost = 0;
+    }    
+   ?>
+   
+   <br><br>
+   
+   <div style="text-align:center;">
+     <a href="/<?PHP echo(AVATAR_NAME); ?>/?blogSP=<?PHP echo($firstPost);?>"><img src="/res/first.png" style="width:45px;"></a>
+     <a href="/<?PHP echo(AVATAR_NAME); ?>/?blogSP=<?PHP echo($prevPost);?>"><img src="/res/arrow-left2.png" style="width:45px;"></a>
+     <a href="/<?PHP echo(AVATAR_NAME); ?>/?blogSP=<?PHP echo($nextPost);?>"><img src="/res/arrow-right2.png" style="width:45px;"></a>
+     <a href="/<?PHP echo(AVATAR_NAME); ?>/?blogSP=<?PHP echo($lastPost);?>"><img src="/res/last.png" style="width:45px;"></a>
+   </div>  
+   
+   <br><br>
+   
    </div> 
 
    <?PHP 
