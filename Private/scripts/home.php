@@ -581,7 +581,9 @@
       $lastPost = 0;
     }    
    ?>
-   
+
+   <?PHP if (defined("APP_PAGINATION") && APP_PAGINATION):?>
+	    
    <br><br>
    
    <div style="text-align:center;">
@@ -590,7 +592,9 @@
      <a href="/<?PHP echo(AVATAR_NAME); ?>/?blogSP=<?PHP echo($nextPost);?>"><img src="/res/arrow-right2.png" style="width:45px;"></a>
      <a href="/<?PHP echo(AVATAR_NAME); ?>/?blogSP=<?PHP echo($lastPost);?>"><img src="/res/last.png" style="width:45px;"></a>
    </div>  
-   
+
+   <?PHP endif; ?> 
+	 
    <br><br>
    
    </div> 
