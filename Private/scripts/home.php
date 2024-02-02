@@ -102,14 +102,13 @@
    //echo_ifdebug(true, "AVATAR_PATH#1=");
    //echo_ifdebug(true, $AVATAR_PATH);
    
-   //if (!empty($_FILES['files'])) {
-   if (!empty($_FILES['filesdd']['tmp_name'][0])) {
-	   
-     //no file uploaded
-     //$uploads = (array)fixMultipleFileUpload($_FILES['files']);
-     //if ($uploads[0]['error'] === UPLOAD_ERR_NO_FILE) {
+   if (!empty($_FILES['files']['tmp_name'][0]) ||  !empty($_FILES['filesdd']['tmp_name'][0])) {
+      
+     $uploads = (array)fixMultipleFileUpload($_FILES['files']);
+     if ($uploads[0]['error'] === PHP_UPLOAD_ERR_NO_FILE) {
        $uploads = (array)fixMultipleFileUpload($_FILES['filesdd']);
-     //}   
+     }   
+     
      //if ($uploads[0]['error'] === PHP_UPLOAD_ERR_NO_FILE) {
      //  echo("WARNING: No file uploaded.");
      //  return;
@@ -367,7 +366,7 @@
   <link rel="shortcut icon" href="/favicon.ico" />
 
   <meta name="description" content="Welcome to Timelapse! Let everyone have its social presence."/>
-  <meta name="keywords" content="Timelapse,social,presence,on,premise,solution"/>
+  <meta name="keywords" content="timelapse,social,presence,on,premise,solution"/>
   <meta name="robots" content="index,follow"/>
   <meta name="author" content="5 Mode"/>
   
@@ -396,9 +395,13 @@
   <form id="frmUpload" role="form" method="post" action="/<?PHP echo(AVATAR_NAME);?>?hl=<?PHP echo($lang);?>" target="_self" enctype="multipart/form-data">  
     
   <div class="dragover" dropzone="copy">  
+ 
+    <div id="fireupload" onclick="$('#files').click()">
+       <img id="picavatar" src="/img?av=<?PHP echo(AVATAR_NAME);?>&pic=<?PHP echo($profilePic);?>" align="middle">  
+    </div> 
     
-    <img id="picavatar" src="/img?av=<?PHP echo(AVATAR_NAME);?>&pic=<?PHP echo($profilePic);?>" align="middle">  
-  
+    <input id="files" name="files[]" type="file" accept=".*" style="visibility: hidden;" multiple>
+      
     <input type="hidden" id="a" name="a">    
     <input type="hidden" id="f" name="f">  
     
@@ -451,7 +454,7 @@
       <br><br>
    </div> 
    <div class="header" style="margin-top:18px;margin-bottom:18px;">
-        <a href="http://timelapse.5mode-foss.eu" target="_self" style="color:#000000; text-decoration: none;">&nbsp;<img src="/res/AFlogo.png" align="middle" style="position:relative;top:-5px;width:22px;">&nbsp;Timelapse</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/par7133/Timelapse" style="color:#000000;"><span style="color:#119fe2">on</span> github</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="mailto:posta@elettronica.lol" style="color:#000000;"><span style="color:#119fe2">for</span> feedback</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="tel:+39-331-4029415" style="font-size:13px;background-color:#15c60b;border:2px solid #15c60b;color:#000000;height:27px;text-decoration:none;">&nbsp;&nbsp;get support&nbsp;&nbsp;</a>
+        <a href="http://timelapse.5mode-foss.eu" target="_self" style="color:#000000; text-decoration: none;">&nbsp;<img src="Public/res/AFlogo.png" align="middle" style="position:relative;top:-5px;width:22px;">&nbsp;Timelapse</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/par7133/Timelapse" style="color:#000000;"><span style="color:#119fe2">on</span> github</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="mailto:posta@elettronica.lol" style="color:#000000;"><span style="color:#119fe2">for</span> feedback</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="tel:+39-331-4029415" style="font-size:13px;background-color:#15c60b;border:2px solid #15c60b;color:#000000;height:27px;text-decoration:none;">&nbsp;&nbsp;get support&nbsp;&nbsp;</a>
    </div>
     
    <form id="frmUpload" role="form" method="post" action="/<?PHP echo(AVATAR_NAME);?>?hl=<?PHP echo($lang);?>" target="_self" enctype="multipart/form-data">  
@@ -581,9 +584,9 @@
       $lastPost = 0;
     }    
    ?>
-
-   <?PHP if (defined("APP_PAGINATION") && APP_PAGINATION):?>
-	    
+   
+   <?PHP if (defined("APP_PAGINATION") && APP_PAGINATION): ?>
+   
    <br><br>
    
    <div style="text-align:center;">
@@ -592,9 +595,9 @@
      <a href="/<?PHP echo(AVATAR_NAME); ?>/?blogSP=<?PHP echo($nextPost);?>"><img src="/res/arrow-right2.png" style="width:45px;"></a>
      <a href="/<?PHP echo(AVATAR_NAME); ?>/?blogSP=<?PHP echo($lastPost);?>"><img src="/res/last.png" style="width:45px;"></a>
    </div>  
-
-   <?PHP endif; ?> 
-	 
+   
+  <?PHP endif; ?>      
+       
    <br><br>
    
    </div> 
@@ -799,7 +802,7 @@
            
  <?PHP endif; ?>           
      
-<script src="static/js/home-js.php?hl=<?PHP echo($lang);?>&av=<?PHP echo(AVATAR_NAME);?>&cv=<?PHP echo($CURRENT_VIEW);?>&cu=<?PHP echo($CUDOZ);?>" type="text/javascript"></script>
+<script src="/js/home-js.php?hl=<?PHP echo($lang);?>&av=<?PHP echo(AVATAR_NAME);?>&cv=<?PHP echo($CURRENT_VIEW);?>&cu=<?PHP echo($CUDOZ);?>" type="text/javascript"></script>
 
 <?PHP if ($CURRENT_VIEW == PUBLIC_VIEW): ?>  
 
