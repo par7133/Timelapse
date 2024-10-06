@@ -228,6 +228,7 @@ body {
   font-size: 12px; 
   text-align: center; 
   z-index: 99998;
+  display:none;
 }
 #footer {
   position: fixed;
