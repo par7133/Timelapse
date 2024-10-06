@@ -4,7 +4,7 @@
     </a>
 </p>
 
-# Timelapse
+# <span style="color:orange;font-weight:900">Timelapse</span>
 
 Hello and welcome to Timelapse!<br>
 	  
