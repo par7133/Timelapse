@@ -1,7 +1,5 @@
 <p align="center">
-    <a href="https://t.imelap.se">
-        <img src="/Public/res/AFlogo2.png" width="188" title="Timelapse" alt="Timelapse">
-    </a>
+    <img src="./Public/res/AFlogo2.png" width="188" title="Timelapse" alt="Timelapse">
 </p>
 
 # <span style="color:orange;font-weight:900">Timelapse</span>
