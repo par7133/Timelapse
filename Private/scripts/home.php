@@ -366,9 +366,9 @@
   <link rel="shortcut icon" href="/favicon.ico" />
 
   <meta name="description" content="Welcome to Timelapse! Let everyone have its social presence."/>
-  <meta name="keywords" content="timelapse,social,presence,on,premise,solution"/>
+  <meta name="keywords" content="timelapse,social,presence,on,premise,solution,NuMode"/>
   <meta name="robots" content="index,follow"/>
-  <meta name="author" content="5 Mode"/>
+  <meta name="author" content="NuMode"/>
   
   <script src="/js/jquery-3.6.0.min.js" type="text/javascript"></script>
   <script src="/js/sha.js" type="text/javascript"></script>
@@ -440,7 +440,7 @@
  </form>   
            
   <div id="footerCont">&nbsp;</div>
-  <div id="footer"><span style="background:#FFFFFF; opacity:0.7;">&nbsp;&nbsp;<a class="aaa" href="https://5mode.com/dd.html">Disclaimer</a>.&nbsp;&nbsp;A <a href="http://5mode.com" class="aaa">5 Mode</a> project and <a href="http://demo.5mode.com" class="aaa">WYSIWYG</a> system. <?PHP echo(getResource0("Some rights reserved", $lang));?></span></div>
+  <div id="footer"><span style="background:#FFFFFF; opacity:0.7;">&nbsp;&nbsp;<a class="aaa" href="https://numode.eu/dd.html">Disclaimer</a>.&nbsp;&nbsp;A <a href="http://numode.eu" class="aaa">NuMode</a> project and <a href="http://demo.numode.eu" class="aaa">WYSIWYG</a> system. <?PHP echo(getResource0("Some rights reserved", $lang));?></span></div>
            
 <?PHP else: ?>          
 
@@ -461,10 +461,10 @@
    </div> -->
    <br>
    <div id="header" class="header" style="margin-top:18px;margin-bottom:18px;">
-        <a href="http://timelapse.5mode-foss.eu" target="_self" style="color:#000000; text-decoration: none;">&nbsp;<img src="Public/res/AFlogo.png" align="middle" style="position:relative;top:-5px;width:22px;">&nbsp;Timelapse</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/par7133/Timelapse" style="color:#000000;"><span style="color:#119fe2">on</span> github</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="mailto:code@gaox.io" style="color:#000000;"><span style="color:#119fe2">for</span> feedback</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="tel:+39-331-4029415" style="font-size:13px;background-color:#15c60b;border:2px solid #15c60b;color:#000000;height:27px;text-decoration:none;">&nbsp;&nbsp;get support&nbsp;&nbsp;</a>
+        <a href="http://timelapse.numode-foss.eu" target="_self" style="color:#000000; text-decoration: none;">&nbsp;<img src="Public/res/AFlogo.png" align="middle" style="position:relative;top:-5px;width:22px;">&nbsp;Timelapse</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/par7133/Timelapse" style="color:#000000;"><span style="color:#119fe2">on</span> github</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="mailto:code@gaox.io" style="color:#000000;"><span style="color:#119fe2">for</span> feedback</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="tel:+39-331-4029415" style="font-size:13px;background-color:#15c60b;border:2px solid #15c60b;color:#000000;height:27px;text-decoration:none;">&nbsp;&nbsp;get support&nbsp;&nbsp;</a>
    </div>
    <div id="headerMob" class="header" style="margin-top:18px;margin-bottom:18px;display:none;">
-        <a href="http://timelapse.5mode-foss.eu" target="_self" style="color:#000000; text-decoration: none;">&nbsp;<img src="Public/res/AFlogo.png" align="middle" style="position:relative;top:-5px;width:22px;">&nbsp;Timelapse</a>
+        <a href="http://timelapse.numode-foss.eu" target="_self" style="color:#000000; text-decoration: none;">&nbsp;<img src="Public/res/AFlogo.png" align="middle" style="position:relative;top:-5px;width:22px;">&nbsp;Timelapse</a>
    </div>
     
    <form id="frmUpload" role="form" method="post" action="/<?PHP echo(AVATAR_NAME);?>?hl=<?PHP echo($lang);?>" target="_self" enctype="multipart/form-data">  
@@ -808,7 +808,7 @@
             <option value="zh-CN" <?PHP echo($lang==PHP_CN?"selected":"");?>>cn</option>
         </select> 
     </div>
-    <span style="background:#FFFFFF; opacity:0.7;">&nbsp;&nbsp;A <a href="http://5mode.com" class="aaa">5 Mode</a> project and <a href="http://demo.5mode.com" class="aaa">WYSIWYG</a> system. <?PHP echo(getResource0("Some rights reserved", $lang));?>.</span></div>
+    <span style="background:#FFFFFF; opacity:0.7;">&nbsp;&nbsp;A <a href="http://numode.eu" class="aaa">NuMode</a> project and <a href="http://demo.numode.eu" class="aaa">WYSIWYG</a> system. <?PHP echo(getResource0("Some rights reserved", $lang));?>.</span></div>
            
  <?PHP endif; ?>           
      
