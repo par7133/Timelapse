@@ -139,17 +139,17 @@ function showEncodedPassword() {
 </head>
 <body style="background:#0d0d0d;">
 
-<div id="langhideit">
+ <div id="langhideen">
+   <br>
+   &nbsp;We have detected that you maybe speak English, do you want to be redirected to the english site? <button onclick="$('#langhideen').hide();">NO</button>&nbsp;<button onclick="window.open('https://timelapse.numode-foss.eu','_self');">OK</button>
+   <br><br>
+ </div>
+
+ <div id="langhideit">
    <br>
    &nbsp;We have detected that you maybe speak Italian, do you want to be redirected to the italian site? <button onclick="$('#langhideit').hide();">NO</button>&nbsp;<button onclick="window.open('https://timelapse.numode-foss.eu/it','_self');">OK</button>
    <br><br>
-</div>
-
-<div id="langhidecn">
-   <br>
-   &nbsp;We have detected that you maybe speak Chinese, do you want to be redirected to the chinese site? <button onclick="$('#langhidecn').hide();">NO</button>&nbsp;<button onclick="window.open('https://timelapse.numode-foss.eu/cn','_self');">OK</button>
-   <br><br>
-</div>
+ </div>
 
 <div id="HCsplash" style="padding-top: 40px; text-align:center;co-lor:#d4b0dc;color:#FFFFFF;font-family:'Press Start 2P';">
     <div id="myh1" style="position:relative; top:0px;"><H1 style="color:red;font-weight:900">Timelapse</H1></div><br><br>
@@ -183,25 +183,25 @@ function showEncodedPassword() {
         <span aria-hidden="true">&times;</span>
      </button>
 	
-	   Hello and welcome to Timelapse!<br><br>
-	   
-	   Timelapse is a light, simple, software on premise to build and own your photo blog.<br><br>
-	   
-	   Timelapse is released under GPLv3 license, it is supplied AS-IS and we do not take any responsibility for its misusage.<br><br>
-	   
-     First step, use the password box and salt fields to create the hash to insert in the config file. Remember to manually set there also the salt value.<br><br>
-	   
-	   As you are going to run Timelapse in the PHP process context, using a limited web server or phpfpm user, you must follow some simple directives for an optimal first setup:<br>
-	   <ol>
-	   <li>Check the write permissions of your "data" folder in your web app Private path; and set its path in the config file.</li>
-        <li>Set the default Locale.</li>
-        <li>Set FILE_MAX_SIZE (remember that some PHP settings could limit the upload behaviour of Timelapse too)</li>
-	<li>Set BLOG_MAX_POSTS to limit the number of visible posts in the blog.</li>	   
-	   </ol> 
-         
-	   <br>	
-		
-           You can access your avatar by http://yourservername.xyz/&lt;your_avatar&gt;. Login with the password for the admin view. Drag-n-drop all your resources in the browser window.<br><br>
+ Hello and welcome to Timelapse!<br><br>
+
+ Timelapse 是一款轻量、简单的软件，用于构建和拥有您的照片博客。<br><br>
+
+ Timelapse 根据 GPLv3 许可证发布，按原样提供，我们对其误用不承担任何责任。<br><br>
+
+ 第一步，使用密码框和盐字段创建要插入配置文件中的哈希值。请记住手动设置盐值。<br><br>
+
+ 当您要使用有限的 Web 服务器或 phpfpm 用户在 PHP 进程上下文中运行 Timelapse 时，您必须遵循一些简单的指令以获得最佳的首次设置：<br>
+ <ol>
+ <li>检查网络应用 Private 路径中“data”文件夹的写入权限；并在配置文件中设置其路径。</li>
+ <li>设置默认区域设置。</li>
+ <li>设置 FILE_MAX_SIZE（请记住，某些 PHP 设置也可能会限制 Timelapse 的上传行为）</li>
+ <li>设置 BLOG_MAX_POSTS 以限制博客中可见帖子的数量。</li>
+ </ol>
+
+ <br>
+
+ 您可以通过 http://yourservername.xyz/<your_avatar> 访问您的头像。使用管理视图的密码登录。将所有资源拖放到浏览器窗口中。<br><br>
 
        Screenshot:<br><br>
 		
@@ -268,11 +268,11 @@ setFooterPos2();
       return ret;
     }
 
-    function isChinese() {
+    function isEnglish() {
       ret = false;
       lang = window.navigator.language;
       lang = lang.toLowerCase();
-      if (lang === "cn" || lang === "zh-cn" || lang === "chinese" || lang === "chinese simplified" || lang === "mandarin") {
+      if (lang === "en" || lang === "en-us" || lang === "en-gb" || lang === "english") {
         ret = true;
       }
       return ret;
@@ -282,8 +282,8 @@ setFooterPos2();
       $("#langhideit").show();
     }
 
-    if (isChinese()) {
-      $("#langhidecn").show();
+    if (isEnglish()) {
+      $("#langhideen").show();
     }
 </script>
 	
