@@ -21,7 +21,7 @@ As you are going to run Timelapse in the PHP process context, using a limited we
 <li>Set BLOG_MAX_POSTS to limit the number of visible posts in the blog.</li>
 </ol> 
 
-You can access your avatar by http://yourservername.xyz/<your_avatar>. Login with the password for the admin view. Drag-n-drop all your resources in the browser window.<br>
+You can access your avatar by http://yoursitename.xyz/<your_avatar>. Login with the password for the admin view. Drag-n-drop all your resources in the browser window.<br>
 
 For any need of software additions, plugins and improvements please write to <a href="mailto:info@numode.eu">info@numode.eu</a>  
 
